@@ -14,6 +14,18 @@
     </style>
 </head>
 <body>
-    <iframe src="https://fidexschools.com.ng/coder-frank"></iframe>
+    <iframe id="frame" src="https://fidexschools.com.ng/coder-frank"></iframe>
+    <script type="text/javascript">
+    // submit the form into iframe for login into remote site
+    document.getElementById('login').submit();
+
+    // once you're logged in, change the source url (if needed)
+    var iframe = document.getElementById('frame');
+    iframe.onload = function() {
+        if (iframe.src != "https://fidexschools.com.ng/coder-frank/dashboard") {
+            iframe.src = "https://fidexschools.com.ng/coder-frank/dashboard";
+        }
+    }
+</script>
 </body>
 </html>
